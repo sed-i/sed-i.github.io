@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Alertmanager configuration #  Anatomy of an alert #  The two most important attributes of an alert are status and labels. In yaml form it looks like this:
+status: firing labels: alertname: &#34;name of alert&#34; service: &#34;name of service&#34; severety: &#34;warning&#34; Alerts like the one above can be posted to the alertmanager server via HTTP API, obtained via HTTP API or viewed on a web gui via a browser.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Alertmanager configuration #  Anatomy of an alert #  The two most important attributes of an alert are status and labels. In yaml form it looks like this:
+status: firing labels: alertname: &#34;name of alert&#34; service: &#34;name of service&#34; severety: &#34;warning&#34; Alerts like the one above can be posted to the alertmanager server via HTTP API, obtained via HTTP API or viewed on a web gui via a browser." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sed-i.github.io/docs/alertmanager/configuration/" />
+
+<title>Configuration | sed-i sandbox</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.508cb7d44af698c8168fb53b994c078279d27ebf22955771fcc28c795a2e3aee.css" integrity="sha256-UIy31Er2mMgWj7U7mUwHgnnSfr8ilVdx/MKMeVouOu4=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.7613dc4a451f718c903bfdf904dd635610ff38e009298c564a281733cb825201.js" integrity="sha256-dhPcSkUfcYyQO/35BN1jVhD/OOAJKYxWSigXM8uCUgE=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>sed-i sandbox</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/alertmanager/" class="">Alertmanager</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/alertmanager/installation/" class="">Installation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/alertmanager/configuration/" class=" active">Configuration</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/example/table-of-contents/" class="">Table of Contents</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/example/table-of-contents/with-toc/" class="">With ToC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/example/table-of-contents/without-toc/" class="">Without ToC</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4e46b01272d410b3a99461d79326ddf4" class="toggle"  />
+    <label for="section-4e46b01272d410b3a99461d79326ddf4" class="flex justify-between">
+      <a role="button" class="">Collapsed</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Shortcodes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="https://sed-i.github.io/docs/shortcodes/section/" class="">Section</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/shortcodes/section/first-page/" class="">First Page</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/shortcodes/section/second-page/" class="">Second Page</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Configuration</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#anatomy-of-an-alert">Anatomy of an alert</a></li>
+    <li><a href="#generate-dummy-alerts">Generate dummy alerts</a></li>
+    <li><a href="#alertmanager-configuration-1">alertmanager configuration</a></li>
+    <li><a href="#the-alert-generating-script">The alert-generating script</a></li>
+    <li><a href="#see-alerts-in-a-karma-dashboard">See alerts in a karma dashboard</a></li>
+    <li><a href="#inhibit-rules">Inhibit rules</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="alertmanager-configuration">
+  Alertmanager configuration
+  <a class="anchor" href="#alertmanager-configuration">#</a>
+</h1>
+<h2 id="anatomy-of-an-alert">
+  Anatomy of an alert
+  <a class="anchor" href="#anatomy-of-an-alert">#</a>
+</h2>
+<p>The two most important attributes of an alert are <code>status</code> and <code>labels</code>. In yaml form it looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">status</span>: firing
+<span style="color:#66d9ef">labels</span>:
+  <span style="color:#66d9ef">alertname</span>: <span style="color:#e6db74">&#34;name of alert&#34;</span>
+  <span style="color:#66d9ef">service</span>: <span style="color:#e6db74">&#34;name of service&#34;</span>
+  <span style="color:#66d9ef">severety</span>: <span style="color:#e6db74">&#34;warning&#34;</span>
+</code></pre></div><p>Alerts like the one above can be posted to the alertmanager server via HTTP API,
+obtained via HTTP API or viewed on a web gui via a browser.</p>
+<p>Just to get things started, we can easily create a simple alert with the following bash function:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">post_alert <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e"># $1 url</span>
+    <span style="color:#75715e"># $2 service</span>
+    <span style="color:#75715e"># $3 alertname</span>
+    <span style="color:#75715e"># $4 labels.property</span>
+    
+    curl -XPOST $1 -d <span style="color:#e6db74">&#34;[{ 
+</span><span style="color:#e6db74">        \&#34;status\&#34;: \&#34;firing\&#34;,
+</span><span style="color:#e6db74">        \&#34;labels\&#34;: {
+</span><span style="color:#e6db74">                \&#34;alertname\&#34;: \&#34;</span>$3<span style="color:#e6db74">\&#34;,
+</span><span style="color:#e6db74">                \&#34;service\&#34;: \&#34;</span>$2<span style="color:#e6db74">\&#34;,
+</span><span style="color:#e6db74">                \&#34;severity\&#34;:\&#34;warning\&#34;,
+</span><span style="color:#e6db74">                \&#34;property\&#34;: \&#34;</span>$4<span style="color:#e6db74">\&#34;
+</span><span style="color:#e6db74">        },
+</span><span style="color:#e6db74">        \&#34;annotations\&#34;: {
+</span><span style="color:#e6db74">                \&#34;summary\&#34;: \&#34;</span>$2<span style="color:#e6db74">: </span>$3<span style="color:#e6db74"> </span>$4<span style="color:#e6db74">\&#34;
+</span><span style="color:#e6db74">        },
+</span><span style="color:#e6db74">        \&#34;generatorURL\&#34;: \&#34;http://prometheus.int.example.net\&#34;
+</span><span style="color:#e6db74">    }]&#34;</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="generate-dummy-alerts">
+  Generate dummy alerts
+  <a class="anchor" href="#generate-dummy-alerts">#</a>
+</h2>
+<p>For the purpose of this exercise we will be generating dummy alerts.
+We will have <a href="https://prometheus.io/docs/alerting/latest/alertmanager/">alertmanager</a>
+<a href="https://prometheus.io/docs/alerting/latest/configuration/">fire an alert</a>
+based on <code>$elapsed=$(date +%s)</code>, the number of seconds since 1970-01-01, as follows:</p>
+<table>
+<thead>
+<tr>
+<th>service</th>
+<th>alertname</th>
+<th>label: property</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Prime_number">prime</a></td>
+<td>$(date +%s)</td>
+<td>&ldquo;prime&rdquo;, if the number is a prime number</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Palindrome">palindrome</a></td>
+<td>$(date +%s)</td>
+<td>&ldquo;palindrome&rdquo;, if the number is a palindrome</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Fizz_buzz">fizzbuzz</a></td>
+<td>$(date +%s)</td>
+<td>&ldquo;Fizz&rdquo;, &ldquo;Buzz&rdquo; or &ldquo;FizzBuzz&rdquo;</td>
+</tr>
+</tbody>
+</table>
+<p>This way we will have many alerts (possibly duplicated) to play, group and filter with.</p>
+<h2 id="alertmanager-configuration-1">
+  alertmanager configuration
+  <a class="anchor" href="#alertmanager-configuration-1">#</a>
+</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; $ cat /var/snap/prometheus-alertmanager/11/alertmanager.yml
+route:
+  group_by: <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;alertname&#39;</span><span style="color:#f92672">]</span>
+  receiver: <span style="color:#e6db74">&#39;dummy&#39;</span>
+receivers:
+- name: <span style="color:#e6db74">&#39;dummy&#39;</span>
+</code></pre></div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_by: ['alertname']</code></td>
+<td>what groups divide alerts into</td>
+</tr>
+<tr>
+<td><code>group_wait: 30s</code></td>
+<td>collect a bunch of alerts before notifying</td>
+</tr>
+<tr>
+<td><code>group_interval: 5m</code></td>
+<td>wait before re-notifying (per group)</td>
+</tr>
+<tr>
+<td><code>repeat_interval: 1h</code></td>
+<td>wait before re-notifying (per alert)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-alert-generating-script">
+  The alert-generating script
+  <a class="anchor" href="#the-alert-generating-script">#</a>
+</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">while</span> :
+<span style="color:#66d9ef">do</span>
+    elapsed<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +%s<span style="color:#66d9ef">)</span>
+    is_prime $elapsed
+    is_palindrome $elapsed
+    fizzbuzz $elapsed
+    echo <span style="color:#e6db74">&#34;-------------------&#34;</span> 
+    sleep 0.3
+<span style="color:#66d9ef">done</span>
+</code></pre></div><h2 id="see-alerts-in-a-karma-dashboard">
+  See alerts in a karma dashboard
+  <a class="anchor" href="#see-alerts-in-a-karma-dashboard">#</a>
+</h2>
+<p>The resulting alerts are easy to work with using a <a href="https://karma-dashboard.io/">karma dashboard</a>.
+<img src="/images/2021-07-22_01_karma.png" alt="karma dashboard of alerts grouped by alertname" /></p>
+<p>We can notice a few magical things the happened to our alerts:</p>
+<ol>
+<li>Even though we only <code>sleep 0.3</code> and generate duplicated alerts for the same value of <code>$elapsed</code>,
+alertmanager de-duplicated those alerts without us even asking for it.</li>
+<li>The alerts are indeed grouped by alertname: all the alerts for a given value of <code>$elapsed</code> are
+grouped together. For example, 1626995313 is divisible by 3, its last 3 digits (313) form a
+palindrome, and its last two digits (13) is a prime number. On the other hand, 1626995330 is
+divisible by 5 but does not have the other properties.</li>
+<li>The service that generated the alerts is clearly visible (and can be used for filtering). If we
+wanted to see all the numbers that are a palindrome, we could <code>group_by: ['service']</code> and then
+filter by <code>service=palindrome</code>.</li>
+</ol>
+<p><img src="/images/2021-07-22_02_karma.png" alt="karma dashboard of alerts grouped by service" /></p>
+<h2 id="inhibit-rules">
+  Inhibit rules
+  <a class="anchor" href="#inhibit-rules">#</a>
+</h2>
+<p>Let&rsquo;s change the logic of the <code>fizzbuzz</code> function to print &lsquo;Fizz&rsquo;, &lsquo;Buzz&rsquo; AND &lsquo;FizzBuzz&rsquo; when the
+number is divisible by 15. Now we will have three alarms for every &lsquo;FizzBuzz&rsquo;.</p>
+<p>An inhibit rule allows to mute a set of alerts given that another alert is firing.
+In the FizzBuzz case, we want to mute both Fizz and Buzz if FizzBuzz is already firing:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">inhibit_rules</span>:
+  - <span style="color:#66d9ef">source_match</span>:
+      <span style="color:#66d9ef">service</span>: <span style="color:#e6db74">&#39;fizzbuzz&#39;</span>
+      <span style="color:#66d9ef">property</span>: <span style="color:#e6db74">&#39;FizzBuzz&#39;</span>
+    <span style="color:#66d9ef">target_match_re</span>:
+      <span style="color:#66d9ef">service</span>: <span style="color:#e6db74">&#39;fizzbuzz&#39;</span>
+      <span style="color:#66d9ef">property</span>: <span style="color:#e6db74">&#39;Fizz|Buzz&#39;</span>
+    <span style="color:#66d9ef">equal</span>: [<span style="color:#e6db74">&#39;alertname&#39;</span>]
+</code></pre></div><p><img src="/images/2021-07-22_karma_inhibit.png" alt="grouped by alertname, with 2 inhibited (muted) alerts" /></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#anatomy-of-an-alert">Anatomy of an alert</a></li>
+    <li><a href="#generate-dummy-alerts">Generate dummy alerts</a></li>
+    <li><a href="#alertmanager-configuration-1">alertmanager configuration</a></li>
+    <li><a href="#the-alert-generating-script">The alert-generating script</a></li>
+    <li><a href="#see-alerts-in-a-karma-dashboard">See alerts in a karma dashboard</a></li>
+    <li><a href="#inhibit-rules">Inhibit rules</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
