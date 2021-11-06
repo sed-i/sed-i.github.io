@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Some people get excited by dates such as April 20, 2004, 8:04pm (20/04/2004, 20:04). Well, what if we could have alertmanager fire an alert every time the gregorian calendar looks exciting?
+alertmanager does offers quite a powerful configurational flexibility that we could use just for that.
+For the purpose of this exercise we will be generating dummy alerts, based on $elapsed=$(date &#43;%s), the number of seconds since 1970-01-01, as follows:">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Playing with alertmanager config" />
+<meta property="og:description" content="Some people get excited by dates such as April 20, 2004, 8:04pm (20/04/2004, 20:04). Well, what if we could have alertmanager fire an alert every time the gregorian calendar looks exciting?
+alertmanager does offers quite a powerful configurational flexibility that we could use just for that.
+For the purpose of this exercise we will be generating dummy alerts, based on $elapsed=$(date &#43;%s), the number of seconds since 1970-01-01, as follows:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sed-i.github.io/posts/alertmanager-config/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-22T17:56:47-04:00" />
+<meta property="article:modified_time" content="2021-07-22T17:56:47-04:00" />
+
+<title>Playing with alertmanager config | TBD</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e62c87c0a5f78618c1d9654bac000b57fdba292e359cd3ae3a97d4774328868d.css" integrity="sha256-5iyHwKX3hhjB2WVLrAALV/26KS41nNOuOpfUd0Moho0=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.7e622cbcecc1ff413b54d9247b29a234301d6b12d7fa9908107a8ed63b50224d.js" integrity="sha256-fmIsvOzB/0E7VNkkeymiNDAdaxLX&#43;pkIEHqO1jtQIk0=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>TBD</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        stream.of(cnscsns) aka blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/publish-to-charmhub/" class="">Publish to charmhub</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/sed-i" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Playing with alertmanager config</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#install-locally-snap">Install locally (snap)</a></li>
+        <li><a href="#anatomy-of-an-alert">Anatomy of an alert</a></li>
+        <li><a href="#alerting-model">Alerting model</a></li>
+        <li><a href="#alertmanager-configuration">alertmanager configuration</a></li>
+        <li><a href="#the-alert-generating-script">The alert-generating script</a></li>
+        <li><a href="#see-alerts-in-a-karma-dashboard">See alerts in a karma dashboard</a></li>
+        <li><a href="#inhibit-rules">Inhibit rules</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/alertmanager-config/">Playing with alertmanager config</a>
+  </h1>
+  
+  <h5>July 22, 2021</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/observability/">observability</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/alerts/">alerts</a>, 
+      <a href="/tags/alertmanager/">alertmanager</a>, 
+      <a href="/tags/exploration/">exploration</a>
+  </div>
+  
+
+
+
+<p>Some people get excited by dates such as April 20, 2004, 8:04pm (20/04/2004, 20:04).
+Well, what if we could have <a href="https://prometheus.io/docs/alerting/latest/alertmanager/">alertmanager</a>
+fire an alert every time the <a href="https://en.wikipedia.org/wiki/Gregorian_calendar">gregorian calendar</a>
+looks exciting?</p>
+<p>alertmanager does offers quite a powerful
+<a href="https://prometheus.io/docs/alerting/latest/configuration/">configurational flexibility</a> that we
+could use just for that.</p>
+<p>For the purpose of this exercise we will be generating dummy alerts,
+based on <code>$elapsed=$(date +%s)</code>, the number of seconds since 1970-01-01, as follows:</p>
+<table>
+<thead>
+<tr>
+<th>service</th>
+<th>alertname</th>
+<th>label: property</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Prime_number">prime</a></td>
+<td>$(date +%s)</td>
+<td>&ldquo;prime&rdquo;, if the number is a prime number</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Palindrome">palindrome</a></td>
+<td>$(date +%s)</td>
+<td>&ldquo;palindrome&rdquo;, if the number is a palindrome</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Fizz_buzz">fizzbuzz</a></td>
+<td>$(date +%s)</td>
+<td>&ldquo;Fizz&rdquo;, &ldquo;Buzz&rdquo; or &ldquo;FizzBuzz&rdquo;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-locally-snap">
+  Install locally (snap)
+  <a class="anchor" href="#install-locally-snap">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; $ sudo snap install prometheus-alertmanager
+</code></pre></div><p>After which you can see that alertmanager is running with default parameters:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; $ pgrep -a alertmanager
+/snap/prometheus-alertmanager/11/bin/alertmanager --config.file<span style="color:#f92672">=</span>/var/snap/prometheus-alertmanager/11/alertmanager.yml --storage.path<span style="color:#f92672">=</span>/var/snap/prometheus-alertmanager/common
+</code></pre></div><p>Note the default location of the configuration file:
+<code>cat /var/snap/prometheus-alertmanager/11/alertmanager.yml</code>.</p>
+<h2 id="anatomy-of-an-alert">
+  Anatomy of an alert
+  <a class="anchor" href="#anatomy-of-an-alert">#</a>
+</h2>
+<p>The two most important attributes of an alarm are <code>status</code> and <code>labels</code>. In yaml form it looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">status</span>: <span style="color:#ae81ff">firing</span>
+<span style="color:#f92672">labels</span>:
+  <span style="color:#f92672">alertname</span>: <span style="color:#e6db74">&#34;name of alert&#34;</span>
+  <span style="color:#f92672">service</span>: <span style="color:#e6db74">&#34;name of service&#34;</span>
+  <span style="color:#f92672">severety</span>: <span style="color:#e6db74">&#34;warning&#34;</span>
+</code></pre></div><p>Alerts like this one can be posted to the alertmanager server via HTTP API,
+obtained via HTTP API or viewed on a web gui via a browser.</p>
+<p>Just to get things started, we can easily create a simple alert with the following bash function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">post_alert <span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e"># $1 service</span>
+    <span style="color:#75715e"># $2 alertname</span>
+    <span style="color:#75715e"># $3 labels.property</span>
+    
+    curl -XPOST $url -d <span style="color:#e6db74">&#34;[{ 
+</span><span style="color:#e6db74">        \&#34;status\&#34;: \&#34;firing\&#34;,
+</span><span style="color:#e6db74">        \&#34;labels\&#34;: {
+</span><span style="color:#e6db74">                \&#34;alertname\&#34;: \&#34;</span>$2<span style="color:#e6db74">\&#34;,
+</span><span style="color:#e6db74">                \&#34;service\&#34;: \&#34;</span>$1<span style="color:#e6db74">\&#34;,
+</span><span style="color:#e6db74">                \&#34;severity\&#34;:\&#34;warning\&#34;,
+</span><span style="color:#e6db74">                \&#34;property\&#34;: \&#34;</span>$3<span style="color:#e6db74">\&#34;
+</span><span style="color:#e6db74">        },
+</span><span style="color:#e6db74">        \&#34;annotations\&#34;: {
+</span><span style="color:#e6db74">                \&#34;summary\&#34;: \&#34;</span>$1<span style="color:#e6db74">: </span>$2<span style="color:#e6db74"> </span>$3<span style="color:#e6db74">\&#34;
+</span><span style="color:#e6db74">        },
+</span><span style="color:#e6db74">        \&#34;generatorURL\&#34;: \&#34;http://prometheus.int.example.net\&#34;
+</span><span style="color:#e6db74">    }]&#34;</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="alerting-model">
+  Alerting model
+  <a class="anchor" href="#alerting-model">#</a>
+</h2>
+<p>For the purpose of this exercise we will be generating dummy alerts,
+based on the number of seconds since 1970-01-01 (obtained via <code>date +%s</code>), as follows:</p>
+<table>
+<thead>
+<tr>
+<th>service</th>
+<th>alertname</th>
+<th>label: property</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Prime_number">prime</a></td>
+<td>$(date +%s)</td>
+<td>&ldquo;prime&rdquo;, if the number is a prime number</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Palindrome">palindrome</a></td>
+<td>$(date +%s)</td>
+<td>&ldquo;palindrome&rdquo;, if the number is a palindrome</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Fizz_buzz">fizzbuzz</a></td>
+<td>$(date +%s)</td>
+<td>&ldquo;Fizz&rdquo;, &ldquo;Buzz&rdquo; or &ldquo;FizzBuzz&rdquo;</td>
+</tr>
+</tbody>
+</table>
+<p>This way we will have many alerts (possibly duplicated) to play, group and filter with.</p>
+<h2 id="alertmanager-configuration">
+  alertmanager configuration
+  <a class="anchor" href="#alertmanager-configuration">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">&gt; $ cat /var/snap/prometheus-alertmanager/11/alertmanager.yml
+route:
+  group_by: <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;alertname&#39;</span><span style="color:#f92672">]</span>
+  receiver: <span style="color:#e6db74">&#39;dummy&#39;</span>
+receivers:
+- name: <span style="color:#e6db74">&#39;dummy&#39;</span>
+</code></pre></div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group_by: ['alertname']</code></td>
+<td>what groups divide alerts into</td>
+</tr>
+<tr>
+<td><code>group_wait: 30s</code></td>
+<td>collect a bunch of alerts before notifying</td>
+</tr>
+<tr>
+<td><code>group_interval: 5m</code></td>
+<td>wait before re-notifying (per group)</td>
+</tr>
+<tr>
+<td><code>repeat_interval: 1h</code></td>
+<td>wait before re-notifying (per alert)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-alert-generating-script">
+  The alert-generating script
+  <a class="anchor" href="#the-alert-generating-script">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">while</span> :
+<span style="color:#66d9ef">do</span>
+    elapsed<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +%s<span style="color:#66d9ef">)</span>
+    is_prime $elapsed
+    is_palindrome $elapsed
+    fizzbuzz $elapsed
+    echo <span style="color:#e6db74">&#34;-------------------&#34;</span> 
+    sleep 0.3
+<span style="color:#66d9ef">done</span>
+</code></pre></div><h2 id="see-alerts-in-a-karma-dashboard">
+  See alerts in a karma dashboard
+  <a class="anchor" href="#see-alerts-in-a-karma-dashboard">#</a>
+</h2>
+<p>The resulting alerts are easy to work with using a <a href="https://karma-dashboard.io/">karma dashboard</a>.
+<img src="/images/2021-07-22_01_karma.png" alt="karma dashboard of alerts grouped by alertname" /></p>
+<p>We can notice a few magical things the happened to our alerts:</p>
+<ol>
+<li>Even though we only <code>sleep 0.3</code> and generate duplicated alerts for the same value of <code>$elapsed</code>,
+alertmanager de-duplicated those alerts without us even asking for it.</li>
+<li>The alerts are indeed grouped by alertname: all the alerts for a given value of <code>$elapsed</code> are
+grouped together. For example, 1626995313 is divisible by 3, its last 3 digits (313) form a
+palindrome, and its last two digits (13) is a prime number. On the other hand, 1626995330 is
+divisible by 5 but does not have the other properties.</li>
+<li>The service that generated the alerts is clearly visible (and can be used for filtering). If we
+wanted to see all the numbers that are a palindrome, we could <code>group_by: ['service']</code> and then
+filter by <code>service=palindrome</code>.</li>
+</ol>
+<p><img src="/images/2021-07-22_02_karma.png" alt="karma dashboard of alerts grouped by service" /></p>
+<h2 id="inhibit-rules">
+  Inhibit rules
+  <a class="anchor" href="#inhibit-rules">#</a>
+</h2>
+<p>Let&rsquo;s change the logic of the <code>fizzbuzz</code> function to print &lsquo;Fizz&rsquo;, &lsquo;Buzz&rsquo; AND &lsquo;FizzBuzz&rsquo; when the
+number is divisible by 15. Now we will have three alarms for every &lsquo;FizzBuzz&rsquo;.</p>
+<p>An inhibit rule allows to mute a set of alerts given that another alert is firing.
+In the FizzBuzz case, we want to mute both Fizz and Buzz if FizzBuzz is already firing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">inhibit_rules</span>:
+  - <span style="color:#f92672">source_match</span>:
+      <span style="color:#f92672">service</span>: <span style="color:#e6db74">&#39;fizzbuzz&#39;</span>
+      <span style="color:#f92672">property</span>: <span style="color:#e6db74">&#39;FizzBuzz&#39;</span>
+    <span style="color:#f92672">target_match_re</span>:
+      <span style="color:#f92672">service</span>: <span style="color:#e6db74">&#39;fizzbuzz&#39;</span>
+      <span style="color:#f92672">property</span>: <span style="color:#e6db74">&#39;Fizz|Buzz&#39;</span>
+    <span style="color:#f92672">equal</span>: [<span style="color:#e6db74">&#39;alertname&#39;</span>]
+</code></pre></div><p><img src="/images/2021-07-22_karma_inhibit.png" alt="grouped by alertname, with 2 inhibited (muted) alerts" /></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#install-locally-snap">Install locally (snap)</a></li>
+        <li><a href="#anatomy-of-an-alert">Anatomy of an alert</a></li>
+        <li><a href="#alerting-model">Alerting model</a></li>
+        <li><a href="#alertmanager-configuration">alertmanager configuration</a></li>
+        <li><a href="#the-alert-generating-script">The alert-generating script</a></li>
+        <li><a href="#see-alerts-in-a-karma-dashboard">See alerts in a karma dashboard</a></li>
+        <li><a href="#inhibit-rules">Inhibit rules</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
