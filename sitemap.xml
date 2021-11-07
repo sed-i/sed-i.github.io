@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sed-i.github.io/docs/publish-to-charmhub/</loc>
+    <loc>https://sed-i.github.io/docs/cheatsheets/publish-to-charmhub/</loc>
   </url><url>
     <loc>https://sed-i.github.io/tags/alertmanager/</loc>
     <lastmod>2021-07-22T17:56:47-04:00</lastmod>
@@ -30,6 +30,8 @@
   </url><url>
     <loc>https://sed-i.github.io/tags/</loc>
     <lastmod>2021-07-22T17:56:47-04:00</lastmod>
+  </url><url>
+    <loc>https://sed-i.github.io/docs/cheatsheets/</loc>
   </url><url>
     <loc>https://sed-i.github.io/docs/</loc>
   </url>

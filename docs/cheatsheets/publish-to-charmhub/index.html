@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Publish a charm to charmhub
+  #
+
+Publishing to charming is straightforward: all you need to do is follow the register-upload-release workflow.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Publish to charmhub" />
+<meta property="og:description" content="
+  Publish a charm to charmhub
+  #
+
+Publishing to charming is straightforward: all you need to do is follow the register-upload-release workflow." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sed-i.github.io/docs/cheatsheets/publish-to-charmhub/" /><meta property="article:section" content="docs" />
+
+
+
+<title>Publish to charmhub | TBD</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e62c87c0a5f78618c1d9654bac000b57fdba292e359cd3ae3a97d4774328868d.css" integrity="sha256-5iyHwKX3hhjB2WVLrAALV/26KS41nNOuOpfUd0Moho0=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.487a76c10c52051f60458d6cf67a95b42098fb51f5b9d6310e2717278cfa1915.js" integrity="sha256-SHp2wQxSBR9gRY1s9nqVtCCY&#43;1H1udYxDicXJ4z6GRU=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>TBD</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        stream.of(cnscsns) aka blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/cheatsheets/" class="">Cheatsheets</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://sed-i.github.io/docs/cheatsheets/publish-to-charmhub/" class=" active">Publish to charmhub</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/sed-i" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Publish to charmhub</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#publish-a-charm-to-charmhub">Publish a charm to charmhub</a>
+      <ul>
+        <li><a href="#register-a-new-charms-name-under-your-acount">Register a new charm&rsquo;s name under your acount</a></li>
+        <li><a href="#pack-and-upload-charm">Pack and upload charm</a></li>
+        <li><a href="#upload-resource-eg-oci-image">Upload resource (e.g. OCI image)</a></li>
+        <li><a href="#release">Release</a></li>
+      </ul>
+    </li>
+    <li><a href="#publish-a-bundle-to-charmhub">Publish a bundle to charmhub</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="publish-a-charm-to-charmhub">
+  Publish a charm to charmhub
+  <a class="anchor" href="#publish-a-charm-to-charmhub">#</a>
+</h1>
+<p>Publishing to charming is straightforward: all you need to do is follow the register-upload-release workflow.</p>
+<h2 id="register-a-new-charms-name-under-your-acount">
+  Register a new charm&rsquo;s name under your acount
+  <a class="anchor" href="#register-a-new-charms-name-under-your-acount">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft names
+charmcraft register karma-k8s
+</code></pre></div><h2 id="pack-and-upload-charm">
+  Pack and upload charm
+  <a class="anchor" href="#pack-and-upload-charm">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft pack
+charmcraft upload karma-k8s_ubuntu-20.04-amd64.charm
+charmcraft revisions karam-k8s
+</code></pre></div><h2 id="upload-resource-eg-oci-image">
+  Upload resource (e.g. OCI image)
+  <a class="anchor" href="#upload-resource-eg-oci-image">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft resources karma-k8s
+charmcraft status karma-k8s
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull ghcr.io/prymitive/karma:v0.92
+IMAGE_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>docker images -q ghcr.io/prymitive/karma:v0.92<span style="color:#66d9ef">)</span>
+charmcraft upload-resource karma-k8s karma-image --image<span style="color:#f92672">=</span>$IMAGE_ID
+charmcraft resource-revisions karma-k8s karma-image
+</code></pre></div><h2 id="release">
+  Release
+  <a class="anchor" href="#release">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft release karma-k8s --channel<span style="color:#f92672">=</span>edge --revision<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --resource<span style="color:#f92672">=</span>karma-image:1
+charmcraft status karma-k8s
+</code></pre></div><h1 id="publish-a-bundle-to-charmhub">
+  Publish a bundle to charmhub
+  <a class="anchor" href="#publish-a-bundle-to-charmhub">#</a>
+</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft names
+charmcraft register lma-light
+charmcraft revisions lma-light
+
+charmcraft pack
+charmcraft upload lma-light.zip
+charmcraft revisions lma-light
+
+charmcraft release lma-light --channel<span style="color:#f92672">=</span>edge --revision<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+charmcraft status lma-light
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#publish-a-charm-to-charmhub">Publish a charm to charmhub</a>
+      <ul>
+        <li><a href="#register-a-new-charms-name-under-your-acount">Register a new charm&rsquo;s name under your acount</a></li>
+        <li><a href="#pack-and-upload-charm">Pack and upload charm</a></li>
+        <li><a href="#upload-resource-eg-oci-image">Upload resource (e.g. OCI image)</a></li>
+        <li><a href="#release">Release</a></li>
+      </ul>
+    </li>
+    <li><a href="#publish-a-bundle-to-charmhub">Publish a bundle to charmhub</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

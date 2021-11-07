@@ -13,9 +13,10 @@
       <pubDate>Thu, 22 Jul 2021 17:56:47 -0400</pubDate>
       
       <guid>https://sed-i.github.io/posts/alertmanager-config/</guid>
-      <description>Some people get excited by dates such as April 20, 2004, 8:04pm (20/04/2004, 20:04). Well, what if we could have alertmanager fire an alert every time the gregorian calendar looks exciting?
-alertmanager does offers quite a powerful configurational flexibility that we could use just for that.
-For the purpose of this exercise we will be generating dummy alerts, based on $elapsed=$(date +%s), the number of seconds since 1970-01-01, as follows:</description>
+      <description>&lt;p&gt;Some people get excited by dates such as April 20, 2004, 8:04pm (20/04/2004, 20:04).
+Well, what if we could have &lt;a href=&#34;https://prometheus.io/docs/alerting/latest/alertmanager/&#34;&gt;alertmanager&lt;/a&gt;
+fire an alert every time the &lt;a href=&#34;https://en.wikipedia.org/wiki/Gregorian_calendar&#34;&gt;gregorian calendar&lt;/a&gt;
+looks exciting?&lt;/p&gt;</description>
     </item>
     
   </channel>
