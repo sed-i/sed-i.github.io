@@ -16,16 +16,14 @@ Publishing to charming is straightforward: all you need to do is follow the regi
 
 Publishing to charming is straightforward: all you need to do is follow the register-upload-release workflow." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sed-i.github.io/docs/cheatsheets/publish-to-charmhub/" /><meta property="article:section" content="docs" />
-
-
+<meta property="og:url" content="https://sed-i.github.io/docs/cheatsheets/publish-to-charmhub/" />
 
 <title>Publish to charmhub | TBD</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.e62c87c0a5f78618c1d9654bac000b57fdba292e359cd3ae3a97d4774328868d.css" integrity="sha256-5iyHwKX3hhjB2WVLrAALV/26KS41nNOuOpfUd0Moho0=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.7034aa11094827cc2c439b4add5bc651da05983e96d4ada8259cc1c7bff72773.js" integrity="sha256-cDSqEQlIJ8wsQ5tK3VvGUdoFmD6W1K2oJZzBx7/3J3M=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.ba8ff6499b15f49bb35e928880ebef6b4633592ef3983430e244861d3a2951cc.js" integrity="sha256-uo/2SZsV9JuzXpKIgOvva0YzWS7zmDQw4kSGHTopUcw=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -190,7 +188,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
  
@@ -251,22 +249,22 @@ https://github.com/alex-shpak/hugo-book
   Register a new charm&rsquo;s name under your acount
   <a class="anchor" href="#register-a-new-charms-name-under-your-acount">#</a>
 </h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft names
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft names
 charmcraft register karma-k8s
 </code></pre></div><h2 id="pack-and-upload-charm">
   Pack and upload charm
   <a class="anchor" href="#pack-and-upload-charm">#</a>
 </h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft pack
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft pack
 charmcraft upload karma-k8s_ubuntu-20.04-amd64.charm
 charmcraft revisions karam-k8s
 </code></pre></div><h2 id="upload-resource-eg-oci-image">
   Upload resource (e.g. OCI image)
   <a class="anchor" href="#upload-resource-eg-oci-image">#</a>
 </h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft resources karma-k8s
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft resources karma-k8s
 charmcraft status karma-k8s
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull ghcr.io/prymitive/karma:v0.92
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull ghcr.io/prymitive/karma:v0.92
 IMAGE_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>docker images -q ghcr.io/prymitive/karma:v0.92<span style="color:#66d9ef">)</span>
 charmcraft upload-resource karma-k8s karma-image --image<span style="color:#f92672">=</span>$IMAGE_ID
 charmcraft resource-revisions karma-k8s karma-image
@@ -274,13 +272,13 @@ charmcraft resource-revisions karma-k8s karma-image
   Release
   <a class="anchor" href="#release">#</a>
 </h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft release karma-k8s --channel<span style="color:#f92672">=</span>edge --revision<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --resource<span style="color:#f92672">=</span>karma-image:1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft release karma-k8s --channel<span style="color:#f92672">=</span>edge --revision<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --resource<span style="color:#f92672">=</span>karma-image:1
 charmcraft status karma-k8s
 </code></pre></div><h1 id="publish-a-bundle-to-charmhub">
   Publish a bundle to charmhub
   <a class="anchor" href="#publish-a-bundle-to-charmhub">#</a>
 </h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft names
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">charmcraft names
 charmcraft register lma-light
 charmcraft revisions lma-light
 
@@ -306,7 +304,8 @@ charmcraft status lma-light
 
 
 
-  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
 
 
  
