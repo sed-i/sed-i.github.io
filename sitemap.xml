@@ -15,7 +15,22 @@
   </url>
   
   <url>
+    <loc>https://sed-i.github.io/categories/</loc>
+    <lastmod>2022-03-06T03:32:24-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sed-i.github.io/tags/club-soda/</loc>
+    <lastmod>2022-03-06T03:32:24-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sed-i.github.io/posts/sodastream/</loc>
+    <lastmod>2022-03-06T03:32:24-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sed-i.github.io/categories/review/</loc>
     <lastmod>2022-03-06T03:32:24-05:00</lastmod>
   </url>
   
@@ -25,7 +40,17 @@
   </url>
   
   <url>
+    <loc>https://sed-i.github.io/tags/sodastream/</loc>
+    <lastmod>2022-03-06T03:32:24-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sed-i.github.io/posts/</loc>
+    <lastmod>2022-03-06T03:32:24-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sed-i.github.io/tags/</loc>
     <lastmod>2022-03-06T03:32:24-05:00</lastmod>
   </url>
   
@@ -36,11 +61,6 @@
   
   <url>
     <loc>https://sed-i.github.io/tags/alerts/</loc>
-    <lastmod>2021-07-22T17:56:47-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sed-i.github.io/categories/</loc>
     <lastmod>2021-07-22T17:56:47-04:00</lastmod>
   </url>
   
@@ -56,11 +76,6 @@
   
   <url>
     <loc>https://sed-i.github.io/posts/alertmanager-config/</loc>
-    <lastmod>2021-07-22T17:56:47-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sed-i.github.io/tags/</loc>
     <lastmod>2021-07-22T17:56:47-04:00</lastmod>
   </url>
   
