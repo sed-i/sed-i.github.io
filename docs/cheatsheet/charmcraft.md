@@ -7,7 +7,7 @@ register-upload-release workflow.
 
 <!--more-->
 
-### Register a new charm's name under your acount
+### Register a new charm's name under your account
 
 ```bash
 charmcraft names
