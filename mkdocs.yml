@@ -21,7 +21,15 @@ terminal-theme: &terminal-theme
   name: terminal
   palette: gruvbox_dark
 
-theme: *terminal-theme
+material-theme: &material-theme
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+
+#theme: *terminal-theme
+theme: *material-theme
 
 plugins:
   - search
