@@ -6,9 +6,11 @@ remote_branch: gh-pages
 
 nav:
   - Home: index.md
+  - Thought:
+      - 'Zen-collage': 'thought/zen.md'
   - Cheatsheet:
-    - charmcraft: 'cheatsheet/charmcraft.md'
-    - 'python multiprocessing': 'cheatsheet/python-multiprocessing.md'
+    - Charmcraft: 'cheatsheet/charmcraft.md'
+    - 'Python multiprocessing': 'cheatsheet/python-multiprocessing.md'
   - Review:
     - Sodastream: 'review/sodastream.md'
   - Reference:

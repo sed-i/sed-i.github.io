@@ -1,11 +1,5 @@
 # Python multiprocessing
 
-Here are some patterns for various multiprocessing use cases.
-
-References:
-- https://docs.python.org/3/library/multiprocessing.html
-
-
 ## Split array and process chunks independently
 
 ```python
@@ -39,3 +33,5 @@ if __name__ == '__main__':
     assert split_and_merge(arr, 5, f) == sum(range(1000)), "Uh oh"
 ```
 
+## References
+- [`multiprocessing` — Process-based parallelism](https://docs.python.org/3/library/multiprocessing.html)
