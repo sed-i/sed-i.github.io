@@ -1,0 +1,33 @@
+site_name: My Docs
+site_url: https://sed-i.github.io/
+
+remote_name: origin
+remote_branch: gh-pages
+
+nav:
+  - Home: index.md
+  - Cheatsheet:
+    - charmcraft: 'cheatsheet/charmcraft.md'
+    - 'python multiprocessing': 'cheatsheet/python-multiprocessing.md'
+  - Review:
+    - Sodastream: 'review/sodastream.md'
+  - Reference:
+    - 'Get up to speed': 'reference/get-up-to-speed.md'
+    - Culture: 'reference/culture.md'
+    - Process: 'reference/process.md'
+    - 'Comic relief': 'reference/comic-relief.md'
+
+terminal-theme: &terminal-theme
+  name: terminal
+  palette: gruvbox_dark
+
+theme: *terminal-theme
+
+plugins:
+  - search
+
+markdown_extensions:
+  - tables
+  - footnotes
+  - toc:
+      permalink: "#"
