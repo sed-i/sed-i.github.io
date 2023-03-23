@@ -8,5 +8,7 @@ Overarching themes.
 - [Why numbering should start at zero](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html)
   Edsger W. Dijkstra, 1982
 
+- [The Cursed Computer Iceberg Meme](https://suricrasia.online/iceberg/)
+  Blackle Mori, 2021
 
 
