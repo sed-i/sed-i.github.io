@@ -6,18 +6,29 @@ remote_branch: gh-pages
 
 nav:
   - Home: index.md
-  - Thought:
-      - 'Zen-collage': 'thought/zen.md'
-  - Cheatsheet:
-    - Charmcraft: 'cheatsheet/charmcraft.md'
-    - 'Python multiprocessing': 'cheatsheet/python-multiprocessing.md'
-  - Review:
-    - Sodastream: 'review/sodastream.md'
-  - Reference:
-    - 'Get up to speed': 'reference/get-up-to-speed.md'
-    - Culture: 'reference/culture.md'
-    - Process: 'reference/process.md'
-    - 'Comic relief': 'reference/comic-relief.md'
+  - Software:
+    - Thought:
+        - 'Zen-collage': 'software/thought/zen.md'
+    - Cheatsheet:
+      - Git: 'software/cheatsheet/git.md'
+      - Charmcraft: 'software/cheatsheet/charmcraft.md'
+      - 'Python multiprocessing': 'software/cheatsheet/python-multiprocessing.md'
+      - Archives: 'software/cheatsheet/archives.md'
+      - 'Conventional comments': 'software/cheatsheet/conventional-comments.md'
+      - 'Remote host': 'software/cheatsheet/remote-host.md'
+      - 'SSH': 'software/cheatsheet/ssh.md'
+    - Reference:
+      - 'Get up to speed': 'software/reference/get-up-to-speed.md'
+      - Culture: 'software/reference/culture.md'
+      - Process: 'software/reference/process.md'
+      - 'Comic relief': 'software/reference/comic-relief.md'
+  - 'Product review':
+    - Sodastream: 'product-review/sodastream.md'
+  - Games:
+    - 'Board games':
+      - Bohnanza: games/board-games/bohnanza.md
+    - Dominos:
+      - 'Mexican train': games/dominos/mexican-train.md
 
 terminal-theme: &terminal-theme
   name: terminal

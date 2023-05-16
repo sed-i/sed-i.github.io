@@ -11,4 +11,4 @@ Overarching themes.
 - [The Cursed Computer Iceberg Meme](https://suricrasia.online/iceberg/)
   Blackle Mori, 2021
 
-
+- [Linux Performance Analysis in 60,000 Milliseconds](https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55)
