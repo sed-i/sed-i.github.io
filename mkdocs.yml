@@ -14,7 +14,7 @@ nav:
       - Charmcraft: 'software/cheatsheet/charmcraft.md'
       - 'Python multiprocessing': 'software/cheatsheet/python-multiprocessing.md'
       - Archives: 'software/cheatsheet/archives.md'
-      - 'Conventional comments': 'software/cheatsheet/conventional-comments.md'
+      - 'Conventional X': 'software/cheatsheet/conventional.md'
       - 'Remote host': 'software/cheatsheet/remote-host.md'
       - 'SSH': 'software/cheatsheet/ssh.md'
     - Reference:
