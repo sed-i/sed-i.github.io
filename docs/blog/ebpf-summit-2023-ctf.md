@@ -1,5 +1,5 @@
-The eBPF summit held a CTF, which you can download from
-[here](https://github.com/isovalent/eBPF-Summit-2023-CTF).
+The [eBPF summit](https://ebpf.io/summit-2023/) held a CTF, which you can
+download from [here](https://github.com/isovalent/eBPF-Summit-2023-CTF).
 
 ## Here's a record of my attempts.
 
@@ -168,4 +168,4 @@ during the summit.
 - [Pixie](https://px.dev/) - eBPF o11y for k8s
 - [Tetragon](https://github.com/cilium/tetragon) - security observability
 - [List of the linux kernel system calls](https://en.wikibooks.org/wiki/The_Linux_Kernel/Syscalls)
-- [bpftune](https://github.com/oracle/bpftune) - syctl autotuning
+- [bpftune](https://github.com/oracle/bpftune) - sysctl autotuning
