@@ -7,6 +7,14 @@ register-upload-release workflow.
 
 <!--more-->
 
+Note: in [headless](https://github.com/jaraco/keyring#using-keyring-on-headless-linux-systems)
+environments (e.g. multipass), use this:
+
+```bash
+dbus-run-session -- bash -c "echo password | gnome-keyring-daemon --unlock; charmcraft <args>"
+```
+
+
 ### Register a new charm's name under your account
 
 ```bash
@@ -34,6 +42,15 @@ docker pull ghcr.io/prymitive/karma:v0.92
 IMAGE_ID=$(docker images -q ghcr.io/prymitive/karma:v0.92)
 charmcraft upload-resource karma-k8s karma-image --image=$IMAGE_ID
 charmcraft resource-revisions karma-k8s karma-image
+```
+
+```bash
+IMAGE="docker://ghcr.io/prymitive/karma:v0.114"
+DIGEST=$(skopeo inspect $IMAGE | jq -r '.Digest')
+
+CHARM="karma-k8s"
+RESOURCE="karma-image"
+charmcraft upload-resource $CHARM $RESOURCE --image=$DIGEST
 ```
 
 ### Release

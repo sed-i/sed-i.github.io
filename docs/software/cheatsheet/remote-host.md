@@ -35,3 +35,10 @@ Check for node pressure eviction
 ```bash
 journalctl | grep eviction
 ```
+
+## Pod hits resource limit
+This is useful to see if resource limits prevent scheduling a pod:
+
+```shell
+kubectl get pod grafana-0 -o=jsonpath='{.status}' -n test-bundle-zdsv
+```

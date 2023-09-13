@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: Stream.of(consciousness)
 site_url: https://sed-i.github.io/
 
 remote_name: origin
@@ -6,6 +6,9 @@ remote_branch: gh-pages
 
 nav:
   - Home: index.md
+  - Blog:
+    - 'eBPF summit 2023 CTF': 'blog/ebpf-summit-2023-ctf.md'
+    - Sodastream: 'blog/sodastream.md'
   - Software:
     - Thought:
         - 'Zen-collage': 'software/thought/zen.md'
@@ -17,18 +20,12 @@ nav:
       - 'Conventional X': 'software/cheatsheet/conventional.md'
       - 'Remote host': 'software/cheatsheet/remote-host.md'
       - 'SSH': 'software/cheatsheet/ssh.md'
+      - 'Privacy online': 'software/cheatsheet/privacy-online.md'
     - Reference:
       - 'Get up to speed': 'software/reference/get-up-to-speed.md'
       - Culture: 'software/reference/culture.md'
       - Process: 'software/reference/process.md'
       - 'Comic relief': 'software/reference/comic-relief.md'
-  - 'Product review':
-    - Sodastream: 'product-review/sodastream.md'
-  - Games:
-    - 'Board games':
-      - Bohnanza: games/board-games/bohnanza.md
-    - Dominos:
-      - 'Mexican train': games/dominos/mexican-train.md
 
 terminal-theme: &terminal-theme
   name: terminal
