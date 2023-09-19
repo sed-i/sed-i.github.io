@@ -42,3 +42,15 @@ This is useful to see if resource limits prevent scheduling a pod:
 ```shell
 kubectl get pod grafana-0 -o=jsonpath='{.status}' -n test-bundle-zdsv
 ```
+
+## Certs
+
+### View
+```shell
+echo | openssl s_client -showcerts -servername charmhub.io -connect charmhub.io:443 | openssl x509 -text -noout
+```
+
+### Compare
+```shell
+diff -y <(openssl x509 -in a.crt -text -noout) <(openssl x509 -in b.crt -text -noout)
+```
