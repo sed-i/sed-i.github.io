@@ -14,6 +14,25 @@ systemctl list-timers
 
 ```
 
+## journalctl
+```shell
+journalctl --since 08:55:00 --no-pager | less
+```
+
+## sysstat
+Install sysstat
+```shell
+sudo apt install sysstat
+sed -i 's/ENABLED="false"/ENABLED="true"/' /etc/default/sysstat
+systemctl restart sysstat sysstat-collect.timer sysstat-summary.timer
+```
+
+Then inspect:
+
+```shell
+sar -r -q -f /var/log/sysstat/{sa_for_that_day} -s 17:50:01 -e 18:01:01
+```
+
 ## Unexpected pod restarts
 Get restart count per pod:
 ```bash

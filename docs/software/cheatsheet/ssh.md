@@ -59,3 +59,20 @@ ssh -i ~/secrets/tailscale-ssh \                                                
   -o "StrictHostKeyChecking no" \
   user@remote
 ```
+
+## Generate SSH key for GitHub
+```shell
+ssh-keygen -t ed25519 -C "82407168+sed-i@users.noreply.github.com" -N "" -f github_ssh
+```
+
+Refs:
+[1](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent),
+[2](https://github.com/settings/keys)
+[3](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
+
+Then,
+```shell
+git config --global gpg.format ssh
+git config --global user.signingkey /PATH/TO/github_ssh.pub
+git config --global commit.gpgsign true  # sign all commit by default (optional)
+```

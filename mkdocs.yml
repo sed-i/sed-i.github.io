@@ -21,6 +21,7 @@ nav:
       - 'Remote host': 'software/cheatsheet/remote-host.md'
       - 'SSH': 'software/cheatsheet/ssh.md'
       - 'Privacy online': 'software/cheatsheet/privacy-online.md'
+      - 'Exif tool': 'software/cheatsheet/exiftool.md'
     - Reference:
       - 'Get up to speed': 'software/reference/get-up-to-speed.md'
       - Culture: 'software/reference/culture.md'
