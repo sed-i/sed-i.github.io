@@ -1,3 +1,13 @@
+---
+title: "eBPF summit 2023 CTF"
+date: 2023-09-03T03:32:24-00:00
+categories:
+- walkthrough
+tags:
+- eBPF
+- CTF
+---
+
 The [eBPF summit](https://ebpf.io/summit-2023/) held a CTF, which you can
 download from [here](https://github.com/isovalent/eBPF-Summit-2023-CTF).
 

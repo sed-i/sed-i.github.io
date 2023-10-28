@@ -1,6 +1,6 @@
 ---
 title: "How much carbonated water do you get from a sodastream?"
-date: 2022-03-06T03:32:24-05:00
+date: 2022-03-06T03:32:24-00:00
 categories:
 - review
 tags:

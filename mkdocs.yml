@@ -5,10 +5,10 @@ remote_name: origin
 remote_branch: gh-pages
 
 nav:
-  - Home: #index.md
+  - Home: index.md
   #- Blog:
-    - 'eBPF summit 2023 CTF': 'blog/ebpf-summit-2023-ctf.md'
-    - Sodastream: 'blog/sodastream.md'
+  #  - 'eBPF summit 2023 CTF': 'blog/ebpf-summit-2023-ctf.md'
+  #  - Sodastream: 'blog/sodastream.md'
   - Software:
     - Thought:
         - 'Zen-collage': 'software/thought/zen.md'
