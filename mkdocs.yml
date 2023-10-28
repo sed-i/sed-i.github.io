@@ -5,8 +5,8 @@ remote_name: origin
 remote_branch: gh-pages
 
 nav:
-  - Home: index.md
-  - Blog:
+  - Home: #index.md
+  #- Blog:
     - 'eBPF summit 2023 CTF': 'blog/ebpf-summit-2023-ctf.md'
     - Sodastream: 'blog/sodastream.md'
   - Software:
