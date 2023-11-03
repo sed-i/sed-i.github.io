@@ -87,3 +87,27 @@ charmcraft publish-lib charms.alertmanager_k8s.v0.alertmanager_remote_configurat
 
 See [official docs](https://juju.is/docs/sdk/charmcraft-libraries).
 
+## craft-parts
+```mermaid
+graph LR
+
+subgraph Part
+$CRAFT_PART_SRC
+$CRAFT_PART_BUILD
+$CRAFT_PART_INSTALL
+end
+
+$CRAFT_PROJECT_DIR
+--->|pull| $CRAFT_PART_SRC
+--->|build| $CRAFT_PART_BUILD
+--->|build| $CRAFT_PART_INSTALL
+--->|stage| $CRAFT_STAGE
+--->|prime| $CRAFT_PRIME
+
+$CRAFT_PROJECT_DIR
+--->|overlay| $CRAFT_OVERLAY
+--->|stage| $CRAFT_STAGE
+
+$CRAFT_PART_INSTALL
+--->|organize| $CRAFT_PART_INSTALL
+```
