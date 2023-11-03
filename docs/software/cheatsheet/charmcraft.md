@@ -88,6 +88,8 @@ charmcraft publish-lib charms.alertmanager_k8s.v0.alertmanager_remote_configurat
 See [official docs](https://juju.is/docs/sdk/charmcraft-libraries).
 
 ## craft-parts
+[Ref.](https://canonical-craft-parts.readthedocs-hosted.com/en/latest/reference/parts_steps.html)
+
 ```mermaid
 graph LR
 
