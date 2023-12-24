@@ -1,5 +1,9 @@
 # Privacy online
 
+## Apps
+- [Secure Messaging Apps Comparison](https://www.securemessagingapps.com/)
+
+
 ## Encrypted ClientHello (ECH)
 Bare SNI is subject to eavesdropping/censorship.
 [ECH](https://en.wikipedia.org/wiki/Server_Name_Indication#Encrypted_Client_Hello)
