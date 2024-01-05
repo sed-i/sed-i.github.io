@@ -4,5 +4,6 @@
 - [Degoogled android phone](blog/degoogle.md)
 
 ## Reading list
+- [2024](reading-list/2024.md)
 - [2023](reading-list/2023.md)
 
