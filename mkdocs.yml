@@ -5,16 +5,23 @@ remote_name: origin
 remote_branch: gh-pages
 
 nav:
-  - Home: index.md
-  #- Blog:
-  #  - 'eBPF summit 2023 CTF': 'blog/ebpf-summit-2023-ctf.md'
-  #  - Sodastream: 'blog/sodastream.md'
+  - Blog:
+    - 'Degoogled android phone': 'blog/degoogle.md'
+    - 'eBPF summit 2023 CTF': 'blog/ebpf-summit-2023-ctf.md'
+    - Sodastream: 'blog/sodastream.md'
+  - 'Reading lists':
+    - '2024': 'reading-list/2024.md'
+    - '2023': 'reading-list/2023.md'
+    - 'Get up to speed': 'reading-list/get-up-to-speed.md'
+    - Culture: 'reading-list/culture.md'
+    - Process: 'reading-list/process.md'
+    - 'Comic relief': 'reading-list/comic-relief.md'
   - Software:
     - Thought:
-        - 'Zen-collage': 'software/thought/zen.md'
+      - 'Zen-collage': 'software/thought/zen.md'
     - Cheatsheet:
       - Git: 'software/cheatsheet/git.md'
-      - Charmcraft: 'software/cheatsheet/charmcraft.md'
+      - "*craft": 'software/cheatsheet/starcraft.md'
       - 'Python multiprocessing': 'software/cheatsheet/python-multiprocessing.md'
       - Archives: 'software/cheatsheet/archives.md'
       - 'Conventional X': 'software/cheatsheet/conventional.md'
@@ -22,11 +29,6 @@ nav:
       - 'SSH': 'software/cheatsheet/ssh.md'
       - 'Privacy online': 'software/cheatsheet/privacy-online.md'
       - 'Exif tool': 'software/cheatsheet/exiftool.md'
-    - Reference:
-      - 'Get up to speed': 'software/reference/get-up-to-speed.md'
-      - Culture: 'software/reference/culture.md'
-      - Process: 'software/reference/process.md'
-      - 'Comic relief': 'software/reference/comic-relief.md'
 
 terminal-theme: &terminal-theme
   name: terminal
