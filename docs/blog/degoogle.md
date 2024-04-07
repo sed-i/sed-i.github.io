@@ -17,7 +17,7 @@ tags:
 
 ## Pleasant surprises (6 month reflection)
 - Lifestyle changed from chasing shininess to focusing on privacy and value.
-- The are many incredible open source apps (list below). There are only a few apps that are painfully missing (traffic-aware navigation, banking). Often, there is an adequate web ui available.
+- There are many incredible open source apps (list below). There are only a few apps that are painfully missing (traffic-aware navigation, banking). Often, there is an adequate web ui available.
 
 
 ## The mindset that would make the transition easier
