@@ -10,6 +10,7 @@ nav:
     - 'Zen-collage': 'zen.md'
     - 'Organizational culture': 'org-culture.md'
   - Blog:
+    - 'Simple diy desk': 'blog/simple-diy-desk.md'
     - 'Degoogled android phone': 'blog/degoogle.md'
     - 'eBPF summit 2023 CTF': 'blog/ebpf-summit-2023-ctf.md'
     - Sodastream: 'blog/sodastream.md'
