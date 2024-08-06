@@ -64,6 +64,11 @@ kubectl get pod grafana-0 -o=jsonpath='{.status}' -n test-bundle-zdsv
 
 ## Certs
 
+### Verify remote certificate chain
+```shell
+echo | openssl s_client -strict -verify_return_error -connect charmhub.io:443 || echo "failed"
+```
+
 ### View
 ```shell
 echo | openssl s_client -showcerts -servername charmhub.io -connect charmhub.io:443 | openssl x509 -text -noout

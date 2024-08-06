@@ -12,6 +12,12 @@ sudo ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking no" \
   -L 8080:$GRAFANA_UNIT_IP:$GRAFANA_WORKLOAD_PORT
 ```
 
+```shell
+sudo sshuttle -r ubuntu@10.196.135.115 10.1.27.0/16 \
+  --ssh-cmd 'ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking no" \
+  -i /var/snap/multipass/common/data/multipassd/ssh-keys/id_rsa'
+```
+
 ## Set up SSH server
 Install ssh server on the server and back-up the config file:
 ```

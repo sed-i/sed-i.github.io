@@ -35,6 +35,10 @@ nav:
       - 'Bug report': 'software/cheatsheet/bug-report.md'
       - jq: 'software/cheatsheet/jq.md'
       - text: 'software/cheatsheet/text.md'
+      - binary: 'software/cheatsheet/binary.md'
+      - ps: 'software/cheatsheet/ps.md'
+      - strace: 'software/cheatsheet/strace.md'
+      - urls: 'software/cheatsheet/urls.md'
 
 terminal-theme: &terminal-theme
   name: terminal

@@ -7,7 +7,9 @@
 [Mermaid](https://mermaid.live),
 [asciiflow](https://asciiflow.com/),
 [Excalidraw](https://excalidraw.com/),
-[Witeboard](https://witeboard.com)
+[Witeboard](https://witeboard.com),
+[Structurizr](https://structurizr.com/dsl),
+[E**dot**or](https://edotor.net/)
 
 ### Text
 [Hemingway Editor](https://hemingwayapp.com/),
@@ -15,3 +17,6 @@
 
 ### Other
 [YAML parser](https://yaml-online-parser.appspot.com/)
+
+## Emulators
+[v86](https://copy.sh/v86/)
