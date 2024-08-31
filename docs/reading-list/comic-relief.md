@@ -18,3 +18,7 @@
 - [IP over Avian Carriers](https://en.wikipedia.org/wiki/IP_over_Avian_Carriers)
 
 - [spurious correlations](https://tylervigen.com/spurious-correlations)
+
+- [regex crossword](https://jimbly.github.io/regex-crossword/)
+
+- [Code review antipatterns](https://www.chiark.greenend.org.uk/~sgtatham/quasiblog/code-review-antipatterns/)
