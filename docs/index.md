@@ -1,3 +1,7 @@
+## Browser games
+- https://string.spiel.com/
+
+
 ## Playgrounds
 [regex](https://regex101.com/), [jq](https://jqplay.org/), [rust](https://play.rust-lang.org), [godbolt](https://godbolt.org/)
 
