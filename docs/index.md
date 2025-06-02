@@ -13,7 +13,8 @@
 [Excalidraw](https://excalidraw.com/),
 [Witeboard](https://witeboard.com),
 [Structurizr](https://structurizr.com/dsl),
-[E**dot**or](https://edotor.net/)
+[E**dot**or](https://edotor.net/),
+[D2](https://play.d2lang.com/)
 
 ### Text
 [Hemingway Editor](https://hemingwayapp.com/),
