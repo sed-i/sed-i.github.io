@@ -128,3 +128,9 @@ charmcraft publish-lib charms.alertmanager_k8s.v0.alertmanager_remote_configurat
 
 See [official docs](https://juju.is/docs/sdk/charmcraft-libraries).
 
+## curl library
+
+### resource revision
+```bash
+curl -XPOST --header "Content-Type: application/json" -d '{"context":[],"actions":[{"action":"install","instance-key":"this-is-a-test-for-resources-lookup-2025-06-11","name":"prometheus-k8s", "channel": "latest/stable", "base":{"architecture":"amd64","name":"ubuntu","channel":"20.04"}}],"fields":["download","id","name","revision","version", "resources"]}' https://api.charmhub.io/v2/charms/refresh  2>/dev/null | jq
+```
