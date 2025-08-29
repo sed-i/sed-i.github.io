@@ -7,6 +7,7 @@ remote_branch: gh-pages
 nav:
   - Home:
     - Bookmarks: index.md
+    - Kids: kids.md
     - 'Zen-collage': 'zen.md'
     - 'Organizational culture': 'org-culture.md'
   - Blog:
