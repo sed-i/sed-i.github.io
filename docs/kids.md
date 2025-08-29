@@ -10,3 +10,7 @@
 ## Drawing
 - [Excalidraw](https://excalidraw.com/)
 - ["mspaint"](https://paint.js.org/)
+
+
+## Games
+- [Triq (set-inspired)](https://www.tidy.games/triq/daily/)
