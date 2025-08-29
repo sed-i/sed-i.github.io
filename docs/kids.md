@@ -1,12 +1,12 @@
 ## Coding
-- https://codingforkids.io/en/
-- https://scratch.mit.edu/projects/editor/?tutorial=getStarted
+- [Games in Python](https://codingforkids.io/en/)
+- [MIT Scratch](https://scratch.mit.edu/projects/editor/?tutorial=getStarted)
 
 
 ## Music
-- https://string.spiel.com/
+- [String pluck](https://string.spiel.com/)
 
 
 ## Drawing
-- https://excalidraw.com/
-- https://paint.js.org/
+- [Excalidraw](https://excalidraw.com/)
+- ["mspaint"](https://paint.js.org/)
