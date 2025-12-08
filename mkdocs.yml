@@ -18,6 +18,7 @@ nav:
     - Sodastream: 'blog/sodastream.md'
     - '5 stars': 'blog/five-star-rank.md'
   - 'Reading lists':
+    - '2025': 'reading-list/2025.md'
     - '2024': 'reading-list/2024.md'
     - '2023': 'reading-list/2023.md'
     - 'Get up to speed': 'reading-list/get-up-to-speed.md'
