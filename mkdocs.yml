@@ -18,7 +18,7 @@ nav:
     - '5 stars': 'blog/five-star-rank.md'
   - 'Reading lists':
     - 'Wishlist': 'reading-list/wishlist.md'
-    - 'Privacy': 'software/cheatsheet/privacy.md'
+    - 'Privacy': 'reading-list/cheatsheet/privacy.md'
     - 'Get up to speed': 'reading-list/get-up-to-speed.md'
     - Culture: 'reading-list/culture.md'
     - Process: 'reading-list/process.md'
