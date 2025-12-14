@@ -9,7 +9,6 @@ nav:
     - Bookmarks: index.md
     - Kids: kids.md
     - 'Zen-collage': 'zen.md'
-    - 'Organizational culture': 'org-culture.md'
   - Blog:
     - 'Simple bird house': 'blog/simple-bird-house.md'
     - 'Simple diy desk': 'blog/simple-diy-desk.md'
@@ -18,31 +17,24 @@ nav:
     - Sodastream: 'blog/sodastream.md'
     - '5 stars': 'blog/five-star-rank.md'
   - 'Reading lists':
-    - '2025': 'reading-list/2025.md'
-    - '2024': 'reading-list/2024.md'
-    - '2023': 'reading-list/2023.md'
+    - 'Wishlist': 'reading-list/wishlist.md'
+    - 'Privacy': 'software/cheatsheet/privacy.md'
     - 'Get up to speed': 'reading-list/get-up-to-speed.md'
     - Culture: 'reading-list/culture.md'
     - Process: 'reading-list/process.md'
     - 'Comic relief': 'reading-list/comic-relief.md'
   - Software:
     - Cheatsheet:
-      - Git: 'software/cheatsheet/git.md'
       - "*craft": 'software/cheatsheet/starcraft.md'
       - 'Python multiprocessing': 'software/cheatsheet/python-multiprocessing.md'
-      - Archives: 'software/cheatsheet/archives.md'
       - 'Conventional X': 'software/cheatsheet/conventional.md'
       - 'Remote host': 'software/cheatsheet/remote-host.md'
       - 'SSH': 'software/cheatsheet/ssh.md'
-      - 'Privacy online': 'software/cheatsheet/privacy-online.md'
       - 'Exif tool': 'software/cheatsheet/exiftool.md'
-      - 'Bug report': 'software/cheatsheet/bug-report.md'
       - jq: 'software/cheatsheet/jq.md'
       - text: 'software/cheatsheet/text.md'
-      - binary: 'software/cheatsheet/binary.md'
       - ps: 'software/cheatsheet/ps.md'
       - strace: 'software/cheatsheet/strace.md'
-      - urls: 'software/cheatsheet/urls.md'
 
 terminal-theme: &terminal-theme
   name: terminal

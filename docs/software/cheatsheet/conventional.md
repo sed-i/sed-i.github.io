@@ -1,73 +1,21 @@
-## Comments
-https://conventionalcomments.org/
+## [Conventional comments](https://conventionalcomments.org/)
 
 
 - `suggestion (blocking)` is similar to `todo`. Omitting `todo`.
 - An actionable `thought`/`note` is a `question`. Omitting `question`, `note`.
 
-
-```
-**Praise:** Title
-
-Highlight something positive (do not leave false praise)
-```
-
----
-
-```
-**Nitpick:** Title
-
-Non-blocking, preference-based
-```
-
----
-
-```
-**Polish:** / **Typo:** Title
-
-Immediate quality improvement
-```
-
----
-
-```
-**Suggestion (non-blocking):** Title
-
-Propose improvements (what + why)
-```
-
----
-
-```
-**Question:** Title
-
-Uncertain about a potential concern (clarification request)
-```
-
----
-
-```
-**Issue:** Title
-
-Highlight specific problem
+| Comment type                      | Notes                                                       |
+|-----------------------------------|-------------------------------------------------------------|
+| `**Praise:** `                    | Highlight something positive (do not leave false praise)    |
+| `**Nitpick:** `                   | Non-blocking, preference-based                              |
+| `**Polish:** / **Typo:** `        | Immediate quality improvement                               |
+| `**Suggestion (non-blocking):** ` | Propose improvements (what + why)                           |
+| `**Question:** `                  | Uncertain about a potential concern (clarification request) |
+| `**Issue:** `                     | Highlight specific problem                                  |
+| `**Chore:** `                     | Need to follow some existing policy/process                 |
 
 
-**Suggestion:** Title
-
-Propose improvements (what + why)
-```
-
----
-
-```
-**Chore:** Title
-
-Need to follow some existing policy/process
-```
-
-
-## Commits
-https://www.conventionalcommits.org/en/
+## [Conventional commits](https://www.conventionalcommits.org/en/)
 
 | Commit type        | SemVer    | Notes                     |
 |--------------------|-----------|---------------------------|
