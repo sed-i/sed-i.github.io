@@ -1,5 +1,6 @@
 # Zen-collage
 
+- It's easier to change systems than to change people.
 - Duplication is far cheaper than the wrong abstraction.[^1]
 - Pin libs to major version and apps to exact dependencies.[^2]
 
