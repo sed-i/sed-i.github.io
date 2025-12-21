@@ -1,8 +1,25 @@
-## Playgrounds
+## Kids
+### Coding
+- [Games in Python](https://codingforkids.io/en/)
+- [MIT Scratch](https://scratch.mit.edu/projects/editor/?tutorial=getStarted)
+
+### Music
+- [String pluck](https://string.spiel.com/)
+
+### Drawing
+- [Excalidraw](https://excalidraw.com/)
+- ["mspaint"](https://paint.js.org/)
+
+### Games
+- [Triq (set-inspired)](https://www.tidy.games/triq/daily/)
+
+
+## Work
+### Playgrounds
 [regex](https://regex101.com/), [jq](https://jqplay.org/), [rust](https://play.rust-lang.org), [godbolt](https://godbolt.org/)
 
-## Editors
-### Diagrams
+### Editors
+#### Diagrams
 [TablesGenerator](https://www.tablesgenerator.com/),
 [Mermaid](https://mermaid.live),
 [asciiflow](https://asciiflow.com/),
@@ -12,12 +29,12 @@
 [E**dot**or](https://edotor.net/),
 [D2](https://play.d2lang.com/)
 
-### Text
+#### Text
 [Hemingway Editor](https://hemingwayapp.com/),
 [StackEdit](https://stackedit.io/app)
 
-### Other
+#### Other
 [YAML parser](https://yaml-online-parser.appspot.com/)
 
-## Emulators
+### Emulators
 [v86](https://copy.sh/v86/)

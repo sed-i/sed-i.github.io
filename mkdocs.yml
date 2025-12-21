@@ -5,18 +5,16 @@ remote_name: origin
 remote_branch: gh-pages
 
 nav:
-  - Home:
-    - Bookmarks: index.md
-    - Kids: kids.md
-    - 'Zen-collage': 'zen.md'
   - Blog:
+    - 'Nusheel tutorial': 'blog/nushell-tutorial.md'
     - 'Simple bird house': 'blog/simple-bird-house.md'
     - 'Simple diy desk': 'blog/simple-diy-desk.md'
     - 'Degoogled android phone': 'blog/degoogle.md'
     - 'eBPF summit 2023 CTF': 'blog/ebpf-summit-2023-ctf.md'
     - Sodastream: 'blog/sodastream.md'
     - '5 stars': 'blog/five-star-rank.md'
-  - 'Reading lists':
+  - 'Bookmarks':
+    - Bookmarks: 'reading-list/bookmarks.md'
     - 'Wishlist': 'reading-list/wishlist.md'
     - 'Privacy': 'reading-list/privacy.md'
     - 'Get up to speed': 'reading-list/get-up-to-speed.md'
@@ -24,6 +22,7 @@ nav:
     - Process: 'reading-list/process.md'
     - 'Comic relief': 'reading-list/comic-relief.md'
   - Software:
+    - 'Zen-collage': 'software/zen.md'
     - Cheatsheet:
       - "*craft": 'software/cheatsheet/starcraft.md'
       - 'Python multiprocessing': 'software/cheatsheet/python-multiprocessing.md'
