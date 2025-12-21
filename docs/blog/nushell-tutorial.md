@@ -56,7 +56,7 @@ L20
 ╰───┴─────┴─────┴────────╯
 ```
 
-Let's convert the last two column into a singed value:
+Let's convert the last two column into a signed value:
 
 ```shell
 > echo "R15\nL20\n" | from csv --noheaders | rename "rot" | insert "dir" {|row| $row.rot | str substring 0..0} | insert "amount" {|row| $row.rot | str substring 1..} | insert "value" {|row| $row.dir | if $in == 'L' {-1} else {1} | $in * $row.amount}
