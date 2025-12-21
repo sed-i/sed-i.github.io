@@ -6,7 +6,7 @@ remote_branch: gh-pages
 
 nav:
   - Blog:
-    - Home: index.md
+    - Blog: index.md
     - 'Nushell tutorial': 'blog/nushell-tutorial.md'
     - 'Simple bird house': 'blog/simple-bird-house.md'
     - 'Simple diy desk': 'blog/simple-diy-desk.md'
