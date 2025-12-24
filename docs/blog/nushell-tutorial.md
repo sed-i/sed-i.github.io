@@ -334,7 +334,7 @@ In the function definition, I'd need to change the `echo` with `open`:
 984
 ```
 
-## `reduce` can `update` a record
+### `reduce` can `update` a record
 Now that I think of it, the sum series isn't *necessary* and the closure in the `reduce`  can accumulate, without needing the `length`.
 
 ```shell
