@@ -1,7 +1,5 @@
 ## How this works
-- `tox -e deploy` calls `mkdocs gh-deploy`, which renders the HTML site to the
-  `gh-pages` branch.
+First, `sudo snap install --classic just`. Then,
+- `just lint` for checks;
+- `just serve` to serve locally.
 
-
-## TODO
-- Auto spellcheck
