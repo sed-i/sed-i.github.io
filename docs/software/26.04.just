@@ -1,6 +1,13 @@
 # How to use this file:
 # 1. First, install just (sudo snap install --classic just)
-# 2. just -f <(curl -fsSL sed-i.github.io/software/26.04.just) tui
+# 2. just -f <(curl -fsSL sed-i.github.io/software/26.04.just)
+
+
+default: tui
+
+
+tui: && _nushell _zellij _aliases
+    sudo apt install -y git curl tree neovim btop htop ripgrep fd-find bat duf
 
 
 oci:
@@ -12,8 +19,6 @@ oci:
       sudo dpkg -i dive.deb; \
       cd -
 
-tui: && _nushell _zellij _aliases
-    sudo apt install -y git curl tree neovim btop htop ripgrep fd-find bat duf
 
 
 # =====================================
