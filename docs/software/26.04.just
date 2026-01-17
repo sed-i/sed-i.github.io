@@ -28,7 +28,8 @@ _aliases:
     #!/usr/bin/env bash
     cd $(mktemp -d)
     git clone https://github.com/sed-i/justfiles.git
-    cp -r justfiles/dotfiles/aliases/ ~/.aliases
+    mkdir -p ~/.aliases
+    cp -r justfiles/dotfiles/aliases/* ~/.aliases
     touch "$HOME/.bash_aliases"
     for f in ~/.aliases/*.sh; do
       rel_f=$(echo "$f" | sed "s|^$HOME|~|")
