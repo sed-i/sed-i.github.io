@@ -1,3 +1,8 @@
+# How to use this file:
+# 1. First, install just (sudo snap install --classic just)
+# 2. just -f <(curl -fsSL sed-i.github.io/software/26.04.just) tui
+
+
 oci:
     sudo apt install -y skopeo
 
@@ -7,12 +12,24 @@ oci:
       sudo dpkg -i dive.deb; \
       cd -
 
-tui: && _zellij _aliases
-    sudo apt install -y git curl tree btop htop ripgrep fd-find bat duf
-    sudo snap install --classic nushell
+tui: && _nushell _zellij _aliases
+    sudo apt install -y git curl tree neovim btop htop ripgrep fd-find bat duf
 
 
 # =====================================
+
+
+_nushell:
+    #!/usr/bin/env bash
+    sudo snap install --classic nushell
+    mkdir -p ~/.config/nushell/
+    if [ ! -e "$HOME/.config/nushell/config.nu" ]; then
+        nu -c "config nu --default" > $HOME/.config/nushell/config.nu
+    fi
+    if [ ! -e "$HOME/.config/nushell/env.nu" ]; then
+        nu -c "config env --default" > $HOME/.config/nushell/env.nu
+    fi
+    grep -qxF '$env.EDITOR = "nvim"' "$HOME/.config/nushell/config.nu" || echo '$env.EDITOR = "nvim"' >> "$HOME/.config/nushell/config.nu"
 
 
 _zellij:
@@ -23,6 +40,7 @@ _zellij:
     fi
     sed -i 's/^default_shell.*$/default_shell "nu"/' "$HOME/.config/zellij/config.kdl"
     grep -qxF 'default_shell "nu"' "$HOME/.config/zellij/config.kdl" || echo 'default_shell "nu"' >> "$HOME/.config/zellij/config.kdl"
+
 
 _aliases:
     #!/usr/bin/env bash
@@ -37,3 +55,8 @@ _aliases:
       grep -qxF ". ${rel_f}" "$HOME/.bash_aliases" || echo ". ${rel_f}" >> "$HOME/.bash_aliases"
     done
 
+    for f in ~/.aliases/*.nu; do
+      rel_f=$(echo "$f" | sed "s|^$HOME|~|")
+      echo "Adding nu aliases: ${rel_f}"
+      grep -qxF "source ${rel_f}" "$HOME/.config/nushell/config.nu" || echo "source ${rel_f}" >> "$HOME/.config/nushell/config.nu"
+    done
