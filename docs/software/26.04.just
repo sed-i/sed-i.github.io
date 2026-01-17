@@ -7,7 +7,7 @@ default: tui
 
 
 tui: && _nushell _zellij _aliases
-    sudo apt install -y git curl tree neovim btop htop ripgrep fd-find bat duf dasel jq yq
+    sudo apt install -y git curl tree neovim btop htop ripgrep fd-find bat duf dasel jq yq lf
 
 
 oci:
