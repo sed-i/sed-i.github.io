@@ -27,7 +27,7 @@ oci:
 _nushell:
     #!/usr/bin/env bash
     sudo snap install --classic nushell
-    mkdir -p ~/.config/nushell/
+    mkdir -p "$HOME/.config/nushell/"
     if [ ! -e "$HOME/.config/nushell/config.nu" ]; then
         nu -c "config nu --default" > $HOME/.config/nushell/config.nu
     fi
@@ -40,8 +40,8 @@ _nushell:
 _zellij:
     #!/usr/bin/env bash
     sudo snap install --classic zellij
+    mkdir -p "$HOME/.config/zellij/"
     if [ ! -e "~/.config/zellij/config.kdl" ]; then
-      mkdir -p "~/.config/zellij/"
       zellij setup --dump-config > ~/.config/zellij/config.kdl
     fi
     sed -i 's/^default_shell.*$/default_shell "nu"/' "$HOME/.config/zellij/config.kdl"
@@ -52,10 +52,10 @@ _aliases:
     #!/usr/bin/env bash
     cd $(mktemp -d)
     git clone https://github.com/sed-i/justfiles.git
-    mkdir -p ~/.aliases
-    cp -r justfiles/dotfiles/aliases/* ~/.aliases
+    mkdir -p $HOME/.aliases
+    cp -r justfiles/dotfiles/aliases/* $HOME/.aliases
     touch "$HOME/.bash_aliases"
-    for f in ~/.aliases/*.sh; do
+    for f in $HOME/.aliases/*.sh; do
       rel_f=$(echo "$f" | sed "s|^$HOME|~|")
       echo "Adding bash aliases: ${rel_f}"
       grep -qxF ". ${rel_f}" "$HOME/.bash_aliases" || echo ". ${rel_f}" >> "$HOME/.bash_aliases"
