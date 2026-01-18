@@ -7,18 +7,18 @@ default: tui
 
 
 tui: && _nushell _zellij _aliases
-    sudo apt install -y git curl tree neovim btop htop ripgrep fd-find bat duf dasel jq yq lf
+    sudo apt install -y git curl tree neovim btop htop ripgrep fd-find bat duf dasel jq yq lf kitty-terminfo
 
 
 oci:
-    sudo apt install -y skopeo
+    #!//usr/bin/env bash
+    sudo apt install -y skopeo umoci
 
     # dive
-    cd $(mktemp -d); \
-      curl -fsSL https://github.com/wagoodman/dive/releases/download/v0.13.1/dive_0.13.1_linux_amd64.deb -o dive.deb; \
-      sudo dpkg -i dive.deb; \
-      cd -
-
+    cd $(mktemp -d)
+    curl -fsSL https://github.com/wagoodman/dive/releases/download/v0.13.1/dive_0.13.1_linux_amd64.deb -o dive.deb
+    sudo dpkg -i dive.deb
+    cd
 
 
 # =====================================
