@@ -41,6 +41,7 @@ _zellij:
     #!/usr/bin/env bash
     sudo snap install --classic zellij
     if [ ! -e "~/.config/zellij/config.kdl" ]; then
+      mkdir -p "~/.config/zellij/"
       zellij setup --dump-config > ~/.config/zellij/config.kdl
     fi
     sed -i 's/^default_shell.*$/default_shell "nu"/' "$HOME/.config/zellij/config.kdl"
