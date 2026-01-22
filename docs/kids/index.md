@@ -13,3 +13,5 @@
 ## Games
 - [Triq (set-inspired)](https://www.tidy.games/triq/daily/)
 
+## Worksheets
+- [Maze generator](https://mazegenerator.net/)
