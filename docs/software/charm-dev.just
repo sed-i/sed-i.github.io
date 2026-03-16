@@ -41,6 +41,7 @@ lxd:
 
 starcraft: lxd
   apt install -y gnome-keyring
+  snap install --classic astral-uv
   snap install --classic charmcraft
   snap install --classic rockcraft
   snap install --classic snapcraft
