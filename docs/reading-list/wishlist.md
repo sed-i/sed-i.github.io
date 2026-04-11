@@ -7,6 +7,9 @@ Chances are I didn't get around to all of these, but it's a nice record of what 
 - [Field Notes From Shipping Real Code With Claude](https://diwank.space/field-notes-from-shipping-real-code-with-claude)
 - [Exploring Generative AI](https://martinfowler.com/articles/exploring-gen-ai.html)
 
+### Misc
+- [Demystifying Overlay File Systems](https://influentcoder.com/posts/overlayfs)
+
 
 ## 2024 reading list
 
