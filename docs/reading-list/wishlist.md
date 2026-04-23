@@ -1,6 +1,9 @@
 # Reading wishlist
 Chances are I didn't get around to all of these, but it's a nice record of what seemed important at the time!
 
+## 2026
+- [Assessing Claude Mythos Preview’s cybersecurity capabilities](https://red.anthropic.com/2026/mythos-preview/)
+
 ## 2025 reading list
 
 ### Vibe coding
