@@ -21,6 +21,7 @@ Here are links to some tools I like to use.
 [Excalidraw](https://excalidraw.com/),
 [Witeboard](https://witeboard.com),
 [Hemingway Editor](https://hemingwayapp.com/),
+[LaTeX eq editor](https://latexeditor.lagrida.com/),
 
 ## Emulators
 [v86](https://copy.sh/v86/)
