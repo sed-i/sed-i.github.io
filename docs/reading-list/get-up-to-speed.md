@@ -1,6 +1,6 @@
 # Get up to speed
 
-Overarching themes.
+## Overarching themes.
 
 - [Software Engineering at Google](https://abseil.io/resources/swe-book)
   Lessons Learned from Programming Over Time, 2020
@@ -12,3 +12,10 @@ Overarching themes.
   Blackle Mori, 2021
 
 - [Linux Performance Analysis in 60,000 Milliseconds](https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55)
+
+
+## AI
+
+- [AGENTS.md](https://agents.md/)
+- SKILLS.md: [opencode](https://opencode.ai/docs/skills/), [zed.dev](https://zed.dev/docs/ai/skills)
+- [models.dev](https://models.dev/)

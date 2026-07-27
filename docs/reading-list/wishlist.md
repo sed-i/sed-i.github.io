@@ -3,6 +3,7 @@ Chances are I didn't get around to all of these, but it's a nice record of what 
 
 ## 2026
 - [Assessing Claude Mythos Preview’s cybersecurity capabilities](https://red.anthropic.com/2026/mythos-preview/)
+- [Behind the Scenes Hardening Firefox with Claude Mythos Preview](https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/)
 
 ## 2025 reading list
 
